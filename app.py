@@ -45,4 +45,4 @@ class Animal(Resource):
       
 api.add_resource(Animal, "/animal/<string:animal_name>")
 
-app.run(debug=True)
+app.run(host="0.0.0.0", debug=True, port=80)
