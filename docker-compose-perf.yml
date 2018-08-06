@@ -1,0 +1,16 @@
+api:
+  build: .
+  command: python3 app.py
+  expose:
+  - "80"
+
+k6:
+  image: loadimpact/k6
+  links:
+  - api:api
+  volumes:
+  - ./performance:/tmp/performance
+  environment:
+  - API_HOST=api
+  - API_PORT=${API_PORT}
+  command: run /tmp/performance/happy_path_perf.js
