@@ -139,7 +139,7 @@ export API_PORT=80
 Once this is done, you can execute the script like:
 
 ```
-k6 run /performance/happy_path_test.js
+k6 run /performance/happy_path_perf.js
 ```
 
 You will see the tests starting to run **assuming that the API is live on the stated host and port**. Once completed, you will see a result like:
