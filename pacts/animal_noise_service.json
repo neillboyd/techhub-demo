@@ -1,0 +1,44 @@
+{
+    "consumer": {
+      "name": "Text to Speech Animal Consumer"
+    },
+    "provider": {
+      "name": "Animal Noise Service"
+    },
+    "interactions": [
+      {
+        "description": "a request to determine the noise a dog makes",
+        "request": {
+          "method": "get",
+          "path": "/animal/dog"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+          },
+          "body": {
+            "animal_name": "dog",
+            "noise": "bark"
+          }
+        }
+      },
+      {
+        "description": "a request to determine the noise a spider makes",
+        "request": {
+          "method": "get",
+          "path": "/animal/spider"
+        },
+        "response": {
+          "status": 404,
+          "headers": {
+          }
+        }
+      }
+    ],
+    "metadata": {
+      "pactSpecification": {
+        "version": "1.0.0"
+      }
+    }
+  }
+  

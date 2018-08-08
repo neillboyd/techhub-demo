@@ -1,0 +1,15 @@
+api:
+  build: .
+  command: python3 app.py
+  expose:
+  - "80"
+
+pactverifier:
+  image: dius/pact-provider-verifier-docker
+  links:
+  - api:api
+  volumes:
+  - ./pacts:/tmp/pacts                 # If you have local Pacts
+  environment:
+  - pact_urls=/tmp/pacts/animal_noise_service.json # If you have local Pacts
+  - provider_base_url=http://api:80
